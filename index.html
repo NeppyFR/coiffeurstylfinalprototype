@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coiffeur Styl - Premium Barber Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              display: ['Bebas Neue', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+              }
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-zinc-950 text-f4f4f5 font-sans selection:bg-gold-500 selection:text-black">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 select-none">
+                <div class="bg-gold-500 p-2 rounded-lg text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
+                </div>
+                <span class="font-display text-2xl tracking-wider text-white">COIFFEUR STYL</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="#services" class="text-sm uppercase tracking-widest font-semibold text-zinc-400 hover:text-gold-500 transition-colors">Leistungen</a>
+                <a href="#gallery" class="text-sm uppercase tracking-widest font-semibold text-zinc-400 hover:text-gold-500 transition-colors">Galerie</a>
+                <a href="#contact" class="text-sm uppercase tracking-widest font-semibold text-zinc-400 hover:text-gold-500 transition-colors">Kontakt</a>
+                <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-black font-bold py-2 px-6 rounded-sm uppercase tracking-wider text-sm transition-transform hover:scale-105">
+                    Termin Buchen
+                </a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-zinc-800 p-4 flex flex-col gap-4 shadow-2xl">
+            <a href="#services" class="text-lg font-display tracking-wide text-zinc-300 hover:text-gold-500">Leistungen</a>
+            <a href="#gallery" class="text-lg font-display tracking-wide text-zinc-300 hover:text-gold-500">Galerie</a>
+            <a href="#contact" class="text-lg font-display tracking-wide text-zinc-300 hover:text-gold-500">Kontakt</a>
+            <a href="#contact" class="bg-gold-500 text-center text-black font-bold py-3 rounded-sm uppercase tracking-wider">
+                Termin Buchen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barber Shop Interior" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/70 via-zinc-950/50 to-zinc-950"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 text-center">
+                <span class="block text-gold-500 font-bold tracking-[0.3em] uppercase mb-4 animate-fade-in-up">Wollishofen</span>
+                <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-white leading-none mb-6 animate-fade-in-up delay-100">
+                    Meister<span class="text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-500">Klasse</span>
+                </h1>
+                <p class="text-zinc-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light animate-fade-in-up delay-200">
+                    Mehr als nur ein Haarschnitt. Wir definieren deinen Style neu mit Präzision, Leidenschaft und erstklassigem Handwerk.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                    <a href="#services" class="bg-gold-500 hover:bg-gold-600 text-black font-bold py-4 px-8 rounded-sm uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                        Unsere Preise
+                    </a>
+                </div>
+            </div>
+
+            <a href="#services" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 hover:text-gold-500 transition-colors animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-zinc-950">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-5xl md:text-6xl text-white mb-4">Preisliste</h2>
+                    <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                    <p class="mt-4 text-zinc-400">Transparente Preise für erstklassigen Service.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Service Items -->
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Haarschnitt Premium</h3>
+                            <span class="text-gold-500 font-bold text-xl">35 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">45 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Waschen, Beratung, Schnitt, Styling & Nackenrasur.</p>
+                    </div>
+
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Bartrasur Royal</h3>
+                            <span class="text-gold-500 font-bold text-xl">25 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">30 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Heiße Kompresse, Rasur mit Klinge, Pflegeöl.</p>
+                    </div>
+
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Coiffeur Styl Paket</h3>
+                            <span class="text-gold-500 font-bold text-xl">55 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">75 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Die volle Erfahrung: Haarschnitt & Bartpflege inkl. Gesichtsmassage.</p>
+                    </div>
+
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Maschinen-Schnitt</h3>
+                            <span class="text-gold-500 font-bold text-xl">20 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">20 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Einheitliche Länge, Konturen & Nacken.</p>
+                    </div>
+
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Kinderhaarschnitt</h3>
+                            <span class="text-gold-500 font-bold text-xl">25 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">30 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Für unsere kleinen Gäste bis 12 Jahre.</p>
+                    </div>
+
+                    <div class="group p-6 border border-zinc-800 bg-zinc-900/50 hover:border-gold-500/50 transition-all duration-300 rounded-lg hover:shadow-lg hover:shadow-gold-500/5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white font-display tracking-wide">Graukaschierung</h3>
+                            <span class="text-gold-500 font-bold text-xl">20 CHF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold bg-zinc-800 text-zinc-300 px-2 py-1 rounded">20 Min</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">Dezente Tönung für Haar oder Bart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 bg-zinc-950">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-5xl md:text-6xl text-white mb-4">Galerie</h2>
+                    <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                    <p class="mt-4 text-zinc-400">Einblicke in unsere Arbeit.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop" alt="Haircut 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop" alt="Haircut 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="Haircut 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="Haircut 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?q=80&w=800&auto=format&fit=crop" alt="Haircut 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-sm aspect-square">
+                        <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=800&auto=format&fit=crop" alt="Haircut 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gold-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-zinc-900 border-t border-zinc-800 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-display text-3xl text-white mb-6">COIFFEUR STYL</h3>
+                    <p class="text-zinc-400 mb-6">Perfektion ist unser Standard. Wir bringen das traditionelle Barbier-Handwerk in die Moderne.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-6">Kontakt</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-zinc-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Albisstrasse 110<br>8038 Wollishofen</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-zinc-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+41441234567" class="hover:text-white transition-colors">+41 44 123 45 67</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-6">Öffnungszeiten</h4>
+                    <ul class="space-y-2 text-zinc-400">
+                        <li class="flex justify-between border-b border-zinc-800 pb-2">
+                            <span>Mo - Fr</span>
+                            <span class="text-white">09:00 - 19:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-zinc-800 pb-2">
+                            <span>Samstag</span>
+                            <span class="text-white">08:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between pt-2">
+                            <span>Sonntag</span>
+                            <span class="text-gold-500">Geschlossen</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map -->
+                <div class="h-48 rounded-lg overflow-hidden bg-zinc-800 relative">
+                    <iframe src="https://maps.google.com/maps?q=Albisstrasse%20110%2C%208038%20Wollishofen&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" class="filter grayscale contrast-125 opacity-70 hover:opacity-100 transition-opacity"></iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-800 pt-8 text-center text-zinc-500 text-sm">
+                <p>&copy; 2024 Coiffeur Styl. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
